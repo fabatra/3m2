@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Diagnóstico por Descritor - Turma 3M2</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #2563eb;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --border: #e2e8f0;
+            --danger: #dc2626;
+            --warning: #d97706;
+            --pending: #64748b;
+        }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 28px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        header h1 { margin: 0 0 8px 0; font-size: 1.8rem; }
+        header p { margin: 0; opacity: 0.9; font-size: 0.95rem; }
+        
+        .quick-links {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+        .quick-links h2 { margin-top: 0; font-size: 1.2rem; color: var(--primary); }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+        }
+        
+        .btn-link {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            transition: background 0.2s;
+        }
+        .btn-gh { background-color: #0969da; }
+        .btn-yt { background-color: #cc0000; }
+        .btn-link:hover { opacity: 0.9; }
+
+        .desc-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        }
+        .desc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .desc-title { font-size: 1.3rem; margin: 0; color: var(--primary); }
+        
+        .section-title {
+            font-size: 1.05rem;
+            margin: 16px 0 8px 0;
+            color: var(--text);
+            font-weight: 700;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th { background-color: #f1f5f9; color: var(--text); font-weight: 600; }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge-danger { background: #fee2e2; color: var(--danger); }
+        .badge-warning { background: #fef3c7; color: var(--warning); }
+        .badge-pending { background: #f1f5f9; color: var(--pending); }
+
+        .note-box {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--secondary);
+            padding: 12px 16px;
+            margin-top: 16px;
+            border-radius: 4px;
+            font-size: 0.88rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Acompanhamento Diagnóstico por Descritor — Turma 3M2</h1>
+        <p>Plano de Ação, Alunos Pendentes e Recomendações de Reforço em Videoaulas (@professortrancoso)</p>
+    </header>
+
+    <section class="quick-links">
+        <h2>📍 Painel de Links Rápidos (Avaliações & Videoaulas)</h2>
+        <div class="links-grid">
+            <div>
+                <strong>D124 — Eq. Reta:</strong><br>
+                <a href="https://fabatra.github.io/d124" target="_blank" class="btn-link btn-gh">Avaliação GitHub</a>
+                <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn-link btn-yt">Aula YouTube</a>
+            </div>
+            <div>
+                <strong>D085 — Coeficientes:</strong><br>
+                <a href="https://fabatra.github.io/d085" target="_blank" class="btn-link btn-gh">Avaliação GitHub</a>
+                <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn-link btn-yt">Aula YouTube</a>
+            </div>
+            <div>
+                <strong>D088 — Eq. Exponencial:</strong><br>
+                <a href="https://fabatra.github.io/d088" target="_blank" class="btn-link btn-gh">Avaliação GitHub</a>
+                <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="btn-link btn-yt">Aula Base YouTube</a>
+            </div>
+            <div>
+                <strong>D074 — Gráf. Exponencial:</strong><br>
+                <a href="https://fabatra.github.io/d074" target="_blank" class="btn-link btn-gh">Avaliação GitHub</a>
+                <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="btn-link btn-yt">Aula Base YouTube</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- D124 -->
+    <article class="desc-card">
+        <div class="desc-header">
+            <h2 class="desc-title">Descritor D124 — Equação da Reta</h2>
+            <div>
+                <a href="https://fabatra.github.io/d124" target="_blank" class="btn-link btn-gh">Teste no GitHub</a>
+                <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn-link btn-yt">Aula no Canal</a>
+            </div>
+        </div>
+
+        <div class="section-title">⚠️ Alunos Pendentes (Faltam Fazer)</div>
+        <p><span class="badge badge-pending">Pendente</span> Akila, Rhayran, Rhayla, Samuel Coelho.</p>
+
+        <div class="section-title">🎯 Alunos com Baixa Pontuação & Indicações de Reforço</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aluno</th>
+                    <th>Desempenho</th>
+                    <th>Prioridade / Diagnóstico</th>
+                    <th>Recomendação de Estudo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Allana</td>
+                    <td><span class="badge badge-danger">0/5</span></td>
+                    <td>Alta — Zerou na 1ª tentativa</td>
+                    <td>Assistir à aula "Aprenda Equação da Reta de Vez!" antes de refazer.</td>
+                </tr>
+                <tr>
+                    <td>Ludimila</td>
+                    <td><span class="badge badge-danger">1/5</span></td>
+                    <td>Alta — Dificuldade conceitual inicial</td>
+                    <td>Revisar o conceito de Equação Geral da Reta no canal.</td>
+                </tr>
+                <tr>
+                    <td>Evellyn</td>
+                    <td><span class="badge badge-warning">2/5</span></td>
+                    <td>Média — Conceitos básicos</td>
+                    <td>Acompanhar a resolução passo a passo na videoaula.</td>
+                </tr>
+                <tr>
+                    <td>Maria Julia</td>
+                    <td><span class="badge badge-warning">2/5</span></td>
+                    <td>Média — Erros de construção</td>
+                    <td>Revisar os exemplos de montagem da equação reduzida.</td>
+                </tr>
+                <tr>
+                    <td>Alessa, Davi Soares, Judson, Marcos Davi, Wesley</td>
+                    <td><span class="badge badge-warning">3/5</span></td>
+                    <td>Regular — Erros de atenção</td>
+                    <td>Assistir à aula para aumentar a velocidade e precisão de resolução.</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+
+    <!-- D085 -->
+    <article class="desc-card">
+        <div class="desc-header">
+            <h2 class="desc-title">Descritor D085 — Coeficiente da Equação da Reta</h2>
+            <div>
+                <a href="https://fabatra.github.io/d085" target="_blank" class="btn-link btn-gh">Teste no GitHub</a>
+                <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn-link btn-yt">Aula no Canal</a>
+            </div>
+        </div>
+
+        <div class="section-title">⚠️ Alunos Pendentes (Faltam Fazer)</div>
+        <p><span class="badge badge-pending">Pendente</span> Alessa, Camila, Davi Soares, Fernanda, Geraldo, Gustavo de Souza, Joao Davi, Judson, Kayslaine, Kayla, Ludimila, Marcos Davi, Maria Julia, Maria Vitória, Rhayla, Wesley.</p>
+
+        <div class="section-title">🎯 Alunos com Baixa Pontuação & Indicações de Reforço</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aluno</th>
+                    <th>Desempenho</th>
+                    <th>Prioridade / Diagnóstico</th>
+                    <th>Recomendação de Estudo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Allana</td>
+                    <td><span class="badge badge-warning">2/5</span></td>
+                    <td>Média — Falta de atenção</td>
+                    <td>Revisar interpretação gráfica do coeficiente angular (m) e linear (n).</td>
+                </tr>
+                <tr>
+                    <td>Rhayran</td>
+                    <td><span class="badge badge-warning">2/5</span></td>
+                    <td>Média — Troca de sinais nos coeficientes</td>
+                    <td>Assistir à aula focando na forma reduzida y = mx + n.</td>
+                </tr>
+                <tr>
+                    <td>Akila, Bruno, Evellyn, Samuel Correa</td>
+                    <td><span class="badge badge-warning">3/5</span></td>
+                    <td>Regular — Atenção necessária</td>
+                    <td>Praticar identificação rápida dos coeficientes após assistir à videoaula.</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+
+    <!-- D088 -->
+    <article class="desc-card">
+        <div class="desc-header">
+            <h2 class="desc-title">Descritor D088 — Equação e Função Exponencial</h2>
+            <div>
+                <a href="https://fabatra.github.io/d088" target="_blank" class="btn-link btn-gh">Teste no GitHub</a>
+                <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="btn-link btn-yt">Aula Direta</a>
+            </div>
+        </div>
+
+        <div class="section-title">⚠️ Alunos Pendentes (Faltam Fazer)</div>
+        <p><span class="badge badge-pending">Pendente</span> Akila, Allana, Alessa, Camila, Davi Soares, Evellyn, Joao Davi, Judson, Kaua, Kayslaine, Marcos Davi, Rhayla, Vitoria, Wesley.</p>
+
+        <div class="section-title">🎯 Alunos com Baixa Pontuação & Indicações de Reforço</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aluno</th>
+                    <th>Desempenho</th>
+                    <th>Prioridade / Diagnóstico</th>
+                    <th>Recomendação de Estudo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bruno</td>
+                    <td><span class="badge badge-warning">3/5 (Diag. Exp.)</span></td>
+                    <td>Média — Dificuldade no isolamento de bases</td>
+                    <td>Assistir à aula "Equação Exponencial Passo a Passo" para dominar igualdade de bases.</td>
+                </tr>
+                <tr>
+                    <td>Samuel Correa</td>
+                    <td><span class="badge badge-warning">Base de Potências</span></td>
+                    <td>Regular — Necessita reforçar propriedades</td>
+                    <td>Rever a aula com foco na simplificação de radicais e expoentes fracionários.</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="note-box">
+            💡 <strong>Orientação Pedagógica:</strong> A aula de <em>Equação Exponencial Passo a Passo</em> serve como base essencial para os descritores D088 e D074, pois desenvolve o raciocínio algébrico necessário antes da análise gráfica.
+        </div>
+    </article>
+
+    <!-- D074 -->
+    <article class="desc-card">
+        <div class="desc-header">
+            <h2 class="desc-title">Descritor D074 — Gráfico da Função Exponencial</h2>
+            <div>
+                <a href="https://fabatra.github.io/d074" target="_blank" class="btn-link btn-gh">Teste no GitHub</a>
+                <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="btn-link btn-yt">Aula Direta</a>
+            </div>
+        </div>
+
+        <div class="section-title">⚠️ Alunos Pendentes (Faltam Fazer)</div>
+        <p><span class="badge badge-pending">Pendente</span> Akila, Allana, Alessa, Alice, Camila, Davi Soares, Evellyn, Fernanda, Geraldo, Joao Davi, Judson, Kayslaine, Kayla, Ludimila, Marcos Davi, Maria Julia, Maria Vitória, Rhayran, Wesley.</p>
+
+        <div class="section-title">🎯 Alunos com Baixa Pontuação & Indicações de Reforço</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aluno</th>
+                    <th>Desempenho</th>
+                    <th>Prioridade / Diagnóstico</th>
+                    <th>Recomendação de Estudo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bruno</td>
+                    <td><span class="badge badge-danger">1/5</span></td>
+                    <td>Alta — Dificuldade na leitura de curvas exponenciais</td>
+                    <td>Assistir à aula de Equação Exponencial e treinar o comportamento da curva (crescente vs decrescente).</td>
+                </tr>
+                <tr>
+                    <td>Samuel Correa</td>
+                    <td><span class="badge badge-warning">3/5</span></td>
+                    <td>Regular — Erros de interpretação de pontos no gráfico</td>
+                    <td>Revisar substituição de pontos no gráfico da função exponencial.</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+</div>
+
+</body>
+</html>
